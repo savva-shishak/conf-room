@@ -1,0 +1,11 @@
+.window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid gray;
+  border-radius: 10px;
+  background-color: rgb(173, 173, 173);
+  box-sizing: border-box;
+}

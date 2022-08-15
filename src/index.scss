@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.tabs {
+  background: rgb(235, 235, 235);
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+
+.tabs_left, .tabs_right {
+  flex-direction: column;
+  width: 20px;
+  height: 100%;
+}
+
+.tabs_top .tabs_bottom {
+  flex-direction: row;
+  height: 20px;
+  width: 100%;
+}
+
+.tabs_left .tabs__item, .tabs_right .tabs__item {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  padding: 10px 3px;
+}
+
+.tabs__item {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.tabs__item_active {
+  background-color: white;
+}
+
+.tabs_right .tabs__item_active {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.tabs_left .tabs__item_active {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
