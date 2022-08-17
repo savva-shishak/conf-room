@@ -4,12 +4,13 @@ import { Conference } from './pages/Conference';
 import './App.scss';
 import {Signin} from "./pages/Signin";
 import {Preparation} from "./pages/Preparation";
+import bg from "./images/backgroud.jpg"
 
 class App extends Component {
   render() {
     return (
       <Router>
-          <img src="/images/backgroud.jpg" alt={"background"} className="bg"/>
+          <img src={bg} alt={"background"} className="bg"/>
         <Routes>
           <Route path="" element={<Signin />} />
           <Route path="/room/:roomId" element={<Conference />} />

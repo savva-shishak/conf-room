@@ -2,6 +2,9 @@ import "./Sigin.scss";
 import {useSpring, animated} from "react-spring";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import whiteLogo from "../images/white_logo.svg";
+import logo from "../images/big_logo.svg";
+import signInIconSrc from "../images/signin-icon.png"
 
 export function Signin() {
     const [roomId, setRoomId] = useState("");
@@ -46,7 +49,7 @@ export function Signin() {
     }, []);
 
     return <div className="sigin">
-        <img src="/images/white_logo.svg" alt={"background"} className="sigin__logo"/>
+        <img src={whiteLogo} alt={"background"} className="sigin__logo"/>
         <form className="sigin__form" onSubmit={(e) => {
             e.preventDefault();
             if (roomId) {
@@ -55,8 +58,8 @@ export function Signin() {
                 setPlaceholder("Название комнаты обязательно!!!")
             }
         }}>
-            <animated.img style={logoStyles} src="/images/big_logo.svg" />
-            <animated.div className={"sigin__logo-text"} style={logoTextStyles}>Видеоконференции</animated.div>
+            <animated.img style={logoStyles} src={logo} />
+            <animated.div className="sigin__logo-text" style={logoTextStyles}>Видеоконференции</animated.div>
             <animated.input
                 value={roomId}
                 onChange={e => setRoomId(e.target.value)}
