@@ -1,0 +1,153 @@
+.preparation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px grey;
+}
+
+@media (max-width: 1000px) {
+  .preparation {
+    align-items: flex-start;
+  }
+}
+
+.preparation__form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.preparation__camera {
+  width: 500px;
+  height: auto;
+  max-width: 95%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.preparation__fields {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.preparation__avatar {
+  height: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.preparation__avatar-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preparation__avatar-img img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.preparation__avatar-toggle {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 270px;
+  padding-bottom: 10px;
+}
+
+.preparation__avatar-none {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #e1e1e1;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  font-size: small;
+  box-sizing: border-box;
+}
+
+.preparation__avatar-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.preparation__avatar-icon svg {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.preparation__avatar-text {
+  margin-top: 45px;
+}
+
+.preparation__avatar_active {
+  outline: 3px solid green;
+}
+
+.preparation__field {
+  width: 100%;
+  color: grey;
+  display: inline;
+  font-size: small;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  background: white;
+  text-shadow: none;
+  box-sizing: border-box;
+}
+
+.preparation__field  input {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
+}
+
+.preparation__submit {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}

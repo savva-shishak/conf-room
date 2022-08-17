@@ -1,0 +1,28 @@
+.toggle-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-icon__off-marker {
+  height: 4px;
+  width: 30px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  transform: translateY(4px) translateX(4px) rotate(45deg);
+  border-radius: 2px;
+}

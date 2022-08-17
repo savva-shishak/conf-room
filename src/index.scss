@@ -12,12 +12,25 @@ code {
     monospace;
 }
 
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card {
   padding: 10px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  overflow: auto;
+  max-height: 100%;
 }
 
 .tabs {
@@ -25,17 +38,19 @@ code {
   display: flex;
   flex-wrap: nowrap;
   box-sizing: border-box;
+  color: green;
+  font-weight: bold;
 }
 
 .tabs_left, .tabs_right {
   flex-direction: column;
-  width: 20px;
+  width: 50px;
   height: 100%;
 }
 
 .tabs_top .tabs_bottom {
   flex-direction: row;
-  height: 20px;
+  height: 50px;
   width: 100%;
 }
 
@@ -43,12 +58,14 @@ code {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
-  padding: 10px 3px;
+  font-size: 16px;
+  padding: 20px 16px;
 }
 
 .tabs__item {
   font-size: 14px;
   line-height: 14px;
+  cursor: pointer;
 }
 
 .tabs__item_active {
@@ -63,4 +80,18 @@ code {
 .tabs_left .tabs__item_active {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 20px;
+  background: green;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
 }

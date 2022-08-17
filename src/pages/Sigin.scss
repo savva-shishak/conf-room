@@ -1,0 +1,42 @@
+.sigin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sigin__form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 200px;
+}
+
+.sigin__input {
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-right: 5px;
+  border-radius: 30px;
+  border: none !important;
+  outline: none !important;
+}
+
+.sigin__logo {
+  position: fixed;
+  top: 25px;
+}
+
+.sigin__logo-text {
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-shadow: 0 0 5px grey;
+}
