@@ -1,10 +1,10 @@
 import "./Sigin.scss";
 import {useSpring, animated} from "react-spring";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import whiteLogo from "../images/white_logo.svg";
 import logo from "../images/big_logo.svg";
-import signInIconSrc from "../images/signin-icon.png"
+import bg from "../images/backgroud.jpg";
 
 export function Signin() {
     const [roomId, setRoomId] = useState("");
@@ -49,6 +49,7 @@ export function Signin() {
     }, []);
 
     return <div className="sigin">
+        <img src={bg} alt={"background"} className="bg"/>
         <img src={whiteLogo} alt={"background"} className="sigin__logo"/>
         <form className="sigin__form" onSubmit={(e) => {
             e.preventDefault();

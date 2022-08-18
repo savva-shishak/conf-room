@@ -1,10 +1,11 @@
 import WebCam from "react-webcam";
 import "./Preparation.scss";
-import {useCallback, useRef, useState} from "react";
+import React, {useCallback, useRef, useState} from "react";
 import {RiUser2Fill} from "react-icons/ri";
 import {useNavigate, useParams} from "react-router-dom";
 import { useFormik } from "formik"
 import {store} from "../components/room";
+import bg from "../images/backgroud.jpg";
 
 export function Preparation() {
     const [avatarSrc, setAvatarSrc] = useState("");
@@ -22,6 +23,7 @@ export function Preparation() {
     const navigate = useNavigate();
 
     return <div className="preparation">
+        <img src={bg} alt={"background"} className="bg"/>
         <form className="preparation__form" onSubmit={e => {
             e.preventDefault();
             if (formik.values.username) {

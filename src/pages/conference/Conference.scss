@@ -1,0 +1,80 @@
+@import "../../components/ui/colors";
+
+.conference {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.conference__menu {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 140px;
+  padding: 25px 0;
+}
+
+.conference__logo {
+  width: 35px;
+  height: 35px;
+}
+
+.conference__links {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.conference__link-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.conference__body {
+  background-color: $grey-1;
+  height: calc(100% - 20px);
+  overflow: hidden;
+  border-radius: 40px;
+  padding: 24px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.conference__head {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+
+  color: $grey-8;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.conference__back {
+  margin-right: 24px;
+}
+
+.conference__users-count {
+  background-color: white;
+  border-radius: 18px;
+  padding-right: 10px;
+  margin-left: 24px;
+  margin-right: 10px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: $grey-6;
+
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,17 @@
+@import "../colors";
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background: $light-turquoise;
+  border-radius: 18px;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 8px 15px;
+}
