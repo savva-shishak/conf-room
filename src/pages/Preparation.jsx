@@ -6,6 +6,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import { useFormik } from "formik"
 import {store} from "../components/room";
 import bg from "../images/backgroud.jpg";
+import {Button} from "../components/ui/button/Button";
 
 export function Preparation() {
     const [avatarSrc, setAvatarSrc] = useState("");
@@ -96,7 +97,7 @@ export function Preparation() {
                     Показ экрана:
                     <input id="out-screen" type="text" {...formik.getFieldProps("outScreen")}/>
                 </label>
-                {formik.values.username && <button type="submit" className="btn">Подключиться</button>}
+                {formik.values.username && <Button type="submit" className="btn">Подключиться</Button>}
             </div>
         </form>
     </div>

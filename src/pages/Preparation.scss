@@ -1,3 +1,5 @@
+@import "../components/ui/colors";
+
 .preparation {
   display: flex;
   justify-content: center;
@@ -117,7 +119,7 @@
 }
 
 .preparation__avatar_active {
-  outline: 3px solid green;
+  outline: 3px solid $light-turquoise;
 }
 
 .preparation__field {
