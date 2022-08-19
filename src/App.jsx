@@ -4,7 +4,6 @@ import { Conference } from './pages/conference/Conference';
 import './App.scss';
 import {Signin} from "./pages/Signin";
 import {Preparation} from "./pages/Preparation";
-import bg from "./images/backgroud.jpg"
 
 class App extends Component {
   render() {

@@ -1,0 +1,10 @@
+.windows-split {
+  display: grid;
+  gap: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+.windows-split .window {
+  height: 350px;
+}

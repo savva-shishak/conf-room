@@ -1,0 +1,8 @@
+.windows-grid {
+  overflow: auto;
+  height: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 350px;
+}

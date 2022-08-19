@@ -1,9 +1,12 @@
 import {useSpring, animated} from "react-spring";
 import colors from "../colors";
 import "./Icon.scss";
+import {ReactSVG} from "react-svg";
+import React from "react";
 
 export function Icon({
-     children,
+     src,
+     crossSrc,
      onClick,
      className = "",
      rotate = 0,
@@ -11,6 +14,7 @@ export function Icon({
      x = 0,
      y = 0,
     size = 56,
+    iconSize = size/2 >> 0,
      ...props
 }) {
     const mods = Object.keys(props).filter(key => !!props[key]);
@@ -32,21 +36,33 @@ export function Icon({
     });
 
     const icon = useSpring({
-        width: size/2 >> 0,
-        height: size/2 >> 0,
-        color: textColor,
+        width: iconSize,
+        height: iconSize,
+        fill: textColor,
     });
 
+    const crossContainerStyle = useSpring({
+        width: mods.includes("disable")? 0 : iconSize,
+        height: mods.includes("disable")? 0 : iconSize,
+        overflow: 'hidden',
+        backgroundColor: bgColor !== "transparent" ? bgColor : "white",
+    })
+
     const crossStyle = useSpring({
-        width: mods.includes("cross")? Math.sqrt(size*size*2) : 0,
-        backgroundColor: textColor
+        width: iconSize,
+        height: iconSize,
+        fill: textColor,
     })
 
     return <animated.div style={container} onClick={onClick} className={"icon-container " + className}>
         <animated.div className="icon-bg" style={bg} />
-        <animated.div className="icon-cross" style={crossStyle} />
         <animated.span style={icon} className="icon">
-            {children}
+            <ReactSVG src={src}/>
+            {crossSrc && <animated.span style={crossContainerStyle} className="icon-cross">
+                <animated.div style={crossStyle}>
+                    <ReactSVG src={crossSrc}/>
+                </animated.div>
+            </animated.span>}
         </animated.span>
     </animated.div>
 }

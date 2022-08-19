@@ -1,3 +1,88 @@
-.windows {
+@import "../ui/colors";
 
+.windows {
+  height: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  overflow: hidden;
+}
+
+.windows__head {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+
+  color: $grey-8;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 36px;
+}
+
+.windows__head-left {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.windows__head-right {
+  background-color: white;
+  height: 34px;
+  border-radius: 17px;
+  display: flex;
+}
+
+.windows__back {
+  margin-right: 24px;
+}
+
+.windows__users-count {
+  background-color: white;
+  border-radius: 18px;
+  padding-right: 10px;
+  margin-left: 24px;
+  margin-right: 10px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: $grey-6;
+
+  display: flex;
+  align-items: center;
+}
+
+.windows__body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.windows__screens {
+  display: flex;
+  height: 100%;
+  width: 300%;
+}
+
+.windows__screens .windows__screen {
+  width: calc(100% / 3);
+}
+
+.windows__controls {
+  padding-top: 24px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.windows__controls .button {
+  padding: 14px 48px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
 }

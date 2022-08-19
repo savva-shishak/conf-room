@@ -4,7 +4,8 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import whiteLogo from "../images/white_logo.svg";
 import logo from "../images/big_logo.svg";
-import bg from "../images/backgroud.jpg";
+import bg from "../images/bg";
+import {Button} from "../components/ui/button/Button";
 
 export function Signin() {
     const [roomId, setRoomId] = useState("");
@@ -35,10 +36,10 @@ export function Signin() {
         paddingBottom: inputHide? 0 : 15,
     });
 
-    const signinTextStyles = useSpring({
+    const signinTextStyles = {
         opacity: roomId? 1 : 0,
         transform: `scale(${roomId? 1 : 0.5})`
-    });
+    };
 
     useEffect(() => {
         setTimeout(() => setLogoHide(false), 500);
@@ -68,9 +69,9 @@ export function Signin() {
                 placeholder={placeholder}
                 className="sigin__input"
             />
-            <animated.button style={signinTextStyles} type="submit" className="btn">
+            <Button style={signinTextStyles} type="submit" primary>
                 Присоединиться
-            </animated.button>
+            </Button>
         </form>
     </div>
 }

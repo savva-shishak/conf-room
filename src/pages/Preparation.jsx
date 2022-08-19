@@ -5,7 +5,7 @@ import {RiUser2Fill} from "react-icons/ri";
 import {useNavigate, useParams} from "react-router-dom";
 import { useFormik } from "formik"
 import {store} from "../components/room";
-import bg from "../images/backgroud.jpg";
+import bg from "../images/bg";
 import {Button} from "../components/ui/button/Button";
 
 export function Preparation() {
@@ -41,6 +41,7 @@ export function Preparation() {
         }}>
             <div className="preparation__camera card">
                 <WebCam
+                    mirrored={true}
                     ref={webCamRef}
                     audio={false}
                     height="100%"
@@ -60,6 +61,7 @@ export function Preparation() {
                                 <img src={avatarSrc} alt="avatar"/>
                                 :
                                 <WebCam
+                                    mirrored={true}
                                     audio={false}
                                     height={150}
                                     screenshotFormat="image/jpeg"
@@ -97,7 +99,10 @@ export function Preparation() {
                     Показ экрана:
                     <input id="out-screen" type="text" {...formik.getFieldProps("outScreen")}/>
                 </label>
-                {formik.values.username && <Button type="submit" className="btn">Подключиться</Button>}
+                    <Button style={{
+                        opacity: formik.values.username ? 1 : 0,
+                        transform: `scale(${formik.values.username ? 1 : 0})`,
+                    }} primary type="submit">Подключиться</Button>
             </div>
         </form>
     </div>

@@ -1,0 +1,22 @@
+.windows-carousel {
+  display: grid;
+  grid-template-rows: 1fr 189px;
+  gap: 20px;
+}
+
+.windows-carousel__container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.windows-carousel__slides {
+  height: 100%;
+  gap: 20px;
+  display: grid;
+}
+
+.windows-carousel__slide {
+  height: 100%;
+  width: 335px;
+}
