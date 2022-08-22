@@ -1,23 +1,6 @@
 import "./Button.scss";
 import {animated, useSpring} from "react-spring"
 import colors from "../colors";
-import {useEffect, useState} from "react";
-
-const colorsNames = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "lightgreen",
-    "turquoise",
-    "lightblue",
-    "blue",
-    "indigo",
-    "violet",
-    "pink",
-    "burgundy",
-    "primary",
-];
 
 export function Button({className, style, onClick, children, ...props}) {
     const mods = Object.keys(props).filter(key => !!props[key]);

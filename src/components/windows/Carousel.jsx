@@ -23,7 +23,7 @@ export function Carousel({ clients }) {
                     if (ticks < 10) {
                         ref.current.scrollBy(30 * side, 0);
                         ticks++;
-                        setTimeout(tick, 10);
+                        setTimeout(tick, 20);
                     }
                 }
 
@@ -34,8 +34,10 @@ export function Carousel({ clients }) {
             ref.current.addEventListener("wheel", handler);
         }
 
-        return () => ref.current.removeEventListener("wheel", handler);
-    }, [ref]);
+        return () => ref.current && ref.current.removeEventListener("wheel", handler);
+        // если сделать так, как еслинт требует, то вертикальная прокрутка работает не сразу
+        /* eslint-disable react-hooks/exhaustive-deps */
+    }, [ref.current]);
 
     return <div className="windows-carousel windows__screen">
         <div><Window clientid={1} /></div>

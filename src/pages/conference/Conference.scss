@@ -3,6 +3,7 @@
 .conference {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 100%;
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
@@ -45,6 +46,9 @@
 }
 
 .conference__right-column {
-  //width: 580px;
+  width: 580px;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
 }
 

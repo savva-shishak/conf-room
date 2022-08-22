@@ -13,14 +13,12 @@ import {Carousel} from "./Carousel";
 import {animated, useSpring} from "react-spring";
 
 import RaisedHandSvg from "./icons/raised hand.svg";
-import moreSvg from "./icons/more.svg";
 import fullscreenEnterSvg from "./icons/enter.svg";
 import outScreenSvg from "./icons/outscreen-enabled.svg";
 import outScreenDisableSvg from "./icons/outscreen-disabled.svg";
 import cameraSvg from "./icons/camera-enable.svg";
 import cameraDisableSvg from "./icons/camera-disable.svg";
 import chatSvg from "./icons/chat-enabled.svg";
-import chatDisableSvg from "./icons/chat-disabled.svg";
 import audioSvg from "./icons/audio-enabled.svg";
 import audioDisableSvg from "./icons/audio-disabled.svg";
 
@@ -30,7 +28,7 @@ const MODES = [
     ['carousel', splits3Svg, Carousel],
 ]
 
-export function Windows() {
+export function Windows({ chat, setChat, participants, setParticipants }) {
     const [screenMode, setScreenMode] = useState(2);
     const [clients] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     const screensStyle = useSpring({
@@ -42,7 +40,6 @@ export function Windows() {
     const [outScreen, setOutScreen] = useState(false);
     const [camera, setCamera] = useState(false);
     const [audio, setAudio] = useState(false);
-    const [chat, setChat] = useState(false);
     const [fullscreen, setFullscreen] = useState(false);
 
     return <div className="windows">
@@ -114,16 +111,21 @@ export function Windows() {
                 size={48}
                 iconSize={20}
                 src={chatSvg}
-                crossSrc={chatDisableSvg}
-                disable={!chat}
-                lightgreen pointer
+                lightgreen={chat}
+                textGrey6={!chat}
+                white={!chat}
+                pointer
                 onClick={() => setChat(!chat)}
             />
             <Icon
                 size={48}
                 iconSize={20}
                 src={groupSvg}
-                lightgreen pointer
+                lightgreen={participants}
+                textGrey6={!participants}
+                white={!participants}
+                onClick={() => setParticipants(!participants)}
+                pointer
             />
             <Icon
                 size={48}
@@ -132,13 +134,6 @@ export function Windows() {
                 white pointer
                 onClick={() => setFullscreen(!fullscreen)}
             />
-            <Icon
-                size={48}
-                iconSize={20}
-                src={moreSvg}
-                white pointer
-            />
-
         </div>
     </div>
 }
