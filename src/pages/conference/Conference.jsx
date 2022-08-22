@@ -30,8 +30,12 @@ export function Conference() {
         height: (chat && participants) ? '40%' : participants ? "100%" : "0%"
     });
 
+    const body = useSpring({
+       paddingRight: (chat || participants) ? 0 : 140
+    });
+
     return (
-        <div className="conference">
+        <animated.div style={body}  className="conference">
             <div className="conference__menu">
                 <img className="conference__logo" src={logo} alt="logo" />
 
@@ -60,9 +64,9 @@ export function Conference() {
 
                 <Icon pointer src={settingsSvg} textGrey6 />
             </div>
-            <div className="conference__body">
+            <animated.div className="conference__body">
                 <Windows {...({ chat, setChat, participants, setParticipants })} />
-            </div>
+            </animated.div>
             <animated.div style={style} className="conference__right-column">
                 <animated.div style={participantsStyle}>
                     <Participants
@@ -79,6 +83,6 @@ export function Conference() {
                     />
                 </animated.div>
             </animated.div>
-        </div>
+        </animated.div>
     );
 }

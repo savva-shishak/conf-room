@@ -1,8 +1,10 @@
 import {store} from "../room";
+import {useState} from "react";
 
 export function useChat() {
     const [{ list: messages = [] }] = store.useState("messages");
     const [{ list: participants = [] }] = store.useState("participants");
+    const [preview, setPreview] = useState({ text: "",  images: [], files: [] });
 
     return {
         messages,
@@ -13,6 +15,9 @@ export function useChat() {
                 ...message,
                 author: participants.find(participant => participant.peedID === message.authorPeedID),
             }
-        }
+        },
+        preview,
+        setPreview,
+        showPreview: preview.text || !!preview.files.length || !!preview.images.length
     };
 }

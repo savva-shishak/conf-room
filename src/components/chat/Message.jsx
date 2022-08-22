@@ -22,13 +22,11 @@ function injectAnchors(text = "") {
     return result;
 }
 
-export function Message({ id }) {
-    const message = useChat().getMessage(id);
+export function Message({ message }) {
 
     const [{ peedID }] = store.useState("user");
 
-    const own = message.author.peedID === peedID;
-    debugger
+    const own = message.authorPeedID === peedID;
 
     const body = <div className={"message__body" + (own? " message__body_own" : "")}>
         <div className="message__text" dangerouslySetInnerHTML={{ __html: injectAnchors(message.text) }}/>
@@ -37,7 +35,7 @@ export function Message({ id }) {
                 {message.files.map(file => <DownloadFile color={own? "white" : "grey6"} key={file.id} file={file}/>)}
             </div>
         }
-        {!!message.images &&
+        {!!message.images && !!message.images.length &&
             <div className="message__images">
                 {message.images.map(src => <img src={src} alt={"image"} className="message__image" />)}
             </div>
