@@ -1,0 +1,76 @@
+@import "../ui/colors";
+
+.message {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  box-sizing: border-box;
+}
+
+.message__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: center;
+  margin-right: 5px;
+}
+
+.message__author {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $grey-6
+}
+
+.message__body {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
+  padding: 4px 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $grey-8;
+  background: $grey-1;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.message_own {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message_own .message__body {
+  background-color: $blue;
+  color: white;
+}
+.message_own a {
+  color: white;
+}
+
+.message__files {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.message__images {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.message__image {
+  object-position: center;
+  object-fit: cover;
+  border-radius: 20px;
+  width: 326px;
+  height: 326px;
+  cursor: pointer;
+}

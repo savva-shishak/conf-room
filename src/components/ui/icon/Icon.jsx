@@ -27,6 +27,7 @@ export function Icon({
         height: size,
         transform: `rotate(${rotate}deg) scale(${scale}) translateX(${x}px) translateY(${y}px)`,
         cursor: mods.includes("pointer")? "pointer" : "default",
+        borderRadius: mods.includes("noround")? "0%" : "50%"
     });
 
     const bg = useSpring({

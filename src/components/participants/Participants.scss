@@ -1,0 +1,86 @@
+@import "../ui/colors";
+
+.participants {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  align-items: flex-start;
+}
+
+.participants__expand {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $grey-6;
+  cursor: pointer;
+}
+
+.participants__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participants__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.participants__count {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 2px 8px;
+  border-radius: 14px;
+  background-color: $blue;
+  color: white;
+}
+
+.participants__list {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+}
+
+.participants__item {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content;
+  align-items: center;
+  cursor: pointer;
+}
+
+.participants__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 12px;
+}
+
+.participants__shadow-container {
+  width: calc(100% - 25px);
+  height: 0;
+  position: relative;
+}
+
+.participants__shadow {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
