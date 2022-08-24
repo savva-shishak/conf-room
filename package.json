@@ -10,6 +10,7 @@
     "debug": "^4.3.4",
     "deep-equal": "^2.0.5",
     "formik": "^2.2.9",
+    "lorem-ipsum": "^2.0.8",
     "mediasoup-client": "^3.6.55",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

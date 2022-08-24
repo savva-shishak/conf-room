@@ -5,8 +5,8 @@ import sendSvg from "./icons/send.svg";
 import attachSvg from "./icons/attach-file.svg";
 import {useSpring, animated} from "react-spring";
 import {useChat} from "./useChat";
-import {Message} from "./Message";
-import {useRef} from "react";
+import {Message, PreviewMessage} from "./Message";
+import {useEffect, useRef} from "react";
 
 export function Chat({ onClose, expand, onExpand }) {
     const { messages = [], getMessage, preview, setPreview, showPreview } = useChat();
@@ -17,7 +17,25 @@ export function Chat({ onClose, expand, onExpand }) {
         width: !expand? "56px" : "0px"
     });
 
-    const ref = useRef(null);
+    const messagesRef = useRef(null);
+    const textareaRef = useRef(null);
+    const { text } = preview;
+    const { current: textarea } = textareaRef;
+
+    useEffect(() => {
+        if(textarea) {
+            textarea.style.height = "20px";
+            textarea.style.height = textarea.scrollHeight + "px";
+        }
+    }, [text, textarea]);
+
+    const { current: messagesEl = new HTMLDivElement() } = messagesRef;
+
+    useEffect(() => {
+        if (messagesEl) {
+            messagesEl.scrollTo(0, messagesEl.scrollHeight);
+        }
+    }, [messages.length, messagesEl, showPreview]);
 
     return <div className="chat">
         <div className="chat__header">
@@ -39,13 +57,25 @@ export function Chat({ onClose, expand, onExpand }) {
             }
         </div>
         <div className="chat__body">
-            <div className="chat__messages" ref={ref}>
+            <div 
+                className="chat__messages" 
+                ref={messagesRef} 
+                onLoad={e => e.currentTarget.scrollTo(0, e.currentTarget.scrollHeight)}
+            >
                 {messages.map(message => <Message message={getMessage(message.id)} key={message.id} />)}
-
+                {showPreview && <PreviewMessage {...preview} /> }
             </div>
             <div className="chat__input">
                 <Icon src={attachSvg} size={40} iconSize={20} white textGrey6 pointer />
-                <textarea type="text" rows="auto" placeholder="Сообщение..." className="chat__text-field" />
+                <textarea 
+                    value={preview.text} 
+                    onChange={e => setPreview({...preview, text: e.target.value})} 
+                    type="text"
+                    ref={textareaRef} 
+                    rows="auto" 
+                    placeholder="Сообщение..." 
+                    className="chat__text-field"
+                />
                 <Icon src={sendSvg} size={40} iconSize={20} white textBlue pointer />
             </div>
         </div>

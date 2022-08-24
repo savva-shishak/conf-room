@@ -1,10 +1,15 @@
 import {store} from "../room";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export function useChat() {
     const [{ list: messages = [] }] = store.useState("messages");
     const [{ list: participants = [] }] = store.useState("participants");
-    const [preview, setPreview] = useState({ text: "",  images: [], files: [] });
+    const [preview, setPreview] = useState({ text: null,  images: [], files: [] });
+
+    useEffect(() => {
+        setPreview({...preview, text: ""});
+    /* eslint-disable react-hooks/exhaustive-deps */
+    }, []);
 
     return {
         messages,

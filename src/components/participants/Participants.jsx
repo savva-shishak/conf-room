@@ -40,8 +40,8 @@ export function Participants({ onClose, expand, onExpand }) {
         </div>
         <div className="participants__list">
             {list
-                .map(({peerID, name, audio, camera, avatarUrl}) =>
-                    <div key={peerID} className="participants__item">
+                .map(({peedID, name, audio, camera, avatarUrl}) =>
+                    <div key={peedID} className="participants__item">
                         <img src={avatarUrl} alt="participants" className="participants__avatar"/>
                         {name}
                         <Icon

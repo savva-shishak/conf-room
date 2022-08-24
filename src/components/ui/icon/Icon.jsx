@@ -31,7 +31,7 @@ export function Icon({
     });
 
     const bg = useSpring({
-        backgroundColor: bgColor,
+        background: bgColor,
         width: bgColor !== "transparent"? size : 0,
         height: bgColor !== "transparent"? size : 0,
     });
@@ -46,7 +46,7 @@ export function Icon({
         width: mods.includes("disable")? 0 : iconSize,
         height: mods.includes("disable")? 0 : iconSize,
         overflow: 'hidden',
-        backgroundColor: bgColor !== "transparent" ? bgColor : "white",
+        background: bgColor !== "transparent" ? bgColor : "white",
     })
 
     const crossStyle = useSpring({

@@ -4,9 +4,9 @@ import React, {useCallback, useRef, useState} from "react";
 import {RiUser2Fill} from "react-icons/ri";
 import {useNavigate, useParams} from "react-router-dom";
 import { useFormik } from "formik"
-import {store} from "../components/room";
-import bg from "../images/bg";
+import { store } from "../components/room";
 import {Button} from "../components/ui/button/Button";
+import { Background } from "../components/ui/background/Background";
 
 export function Preparation() {
     const [avatarSrc, setAvatarSrc] = useState("");
@@ -24,7 +24,7 @@ export function Preparation() {
     const navigate = useNavigate();
 
     return <div className="preparation">
-        <img src={bg} alt={"background"} className="bg"/>
+        <Background />
         <form className="preparation__form" onSubmit={e => {
             e.preventDefault();
             if (formik.values.username) {
@@ -39,15 +39,17 @@ export function Preparation() {
                 setPlaceholder("Нам необходимо знать ваше имя!!!")
             }
         }}>
-            <div className="preparation__camera card">
-                <WebCam
-                    mirrored={true}
-                    ref={webCamRef}
-                    audio={false}
-                    height="100%"
-                    screenshotFormat="image/jpeg"
-                    width="100%"
-                />
+            <div className="preparation__camera">
+                <div className="preparation__camera-container">
+                    <WebCam
+                        mirrored={true}
+                        ref={webCamRef}
+                        audio={false}
+                        height={500}
+                        screenshotFormat="image/jpeg"
+                        width={500}
+                    />
+                </div>
             </div>
             <div className="preparation__fields">
                 Нажмите на аватар, чтобы зафиксировать:

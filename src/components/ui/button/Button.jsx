@@ -19,7 +19,7 @@ export function Button({className, style, onClick, children, ...props}) {
         onClick={(e) => {
             onClick(e);
         }}
-        {...props}
+        {...mods.filter(mode => !Object.keys(colors).includes(mode)).reduce((arr, curr) => ({ ...arr, [curr]: props[curr] }),{})}
     >
         {children}
         <div className="button__highlight"></div>

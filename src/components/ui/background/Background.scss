@@ -1,0 +1,27 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;  width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    object-fit: cover;
+    object-position: center;
+    background: linear-gradient(103.4deg, #007AFE 0%, #00C7BE 100%);
+}
+
+.background__label {
+    font-weight: 900;
+    font-size: 160px;
+    line-height: 105px;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    text-align: right;
+    opacity: 0.5;
+    color: white;
+}
+
+.background__stroke {
+    color: transparent;
+    -webkit-text-stroke: 4px white;
+}

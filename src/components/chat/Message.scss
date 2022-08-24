@@ -21,7 +21,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: $grey-6
+  color: $grey-6 !important;
 }
 
 .message__body {
@@ -37,6 +37,13 @@
   background: $grey-1;
   border-radius: 8px;
   margin: 5px;
+}
+
+.message_preview {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: $grey-6;
 }
 
 .message_own {

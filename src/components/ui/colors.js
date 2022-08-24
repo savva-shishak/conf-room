@@ -13,6 +13,7 @@ const theme = {
     pink:           { value: "#FF2E55", text: "white" },
     burgundy:       { value: "#A2845E", text: "white" },
     primary:        { value: "#00C7BE", text: "white" },
+    maingradient:   { value: "linear-gradient(103.4deg, #007AFE 0%, #00C7BE 100%)", text: "white" },
 
     grey9: { value: "#1C1C1E", text: "white" },
     grey8: { value: "#2C2C2E", text: "white" },
