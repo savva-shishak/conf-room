@@ -13,7 +13,6 @@ import {Chat} from "../../components/chat/Chat";
 import {useSpring, animated} from "react-spring";
 
 export function Conference() {
-    const [toggle, setToggle] = useState(false);
     const [chat, setChat] = useState(true);
     const [participants, setParticipants] = useState(false);
 
@@ -45,15 +44,7 @@ export function Conference() {
                         textGrey6
                         iconSize={36}
                     />
-                    <Icon
-                        pointer
-                        src={cameraSvg}
-                        crossSrc={cameraDisableSvg}
-                        disable={toggle}
-                        onClick={() => setToggle(!toggle)}
-                        blue
-                        iconSize={36}
-                    />
+                    <Icon src={cameraSvg} blue iconSize={36}/>
                     <Icon
                         pointer
                         src={calendarSvg}

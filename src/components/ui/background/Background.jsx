@@ -6,7 +6,7 @@ function PostPrint({ char, time }) {
 
     useEffect(() => {
         setTimeout(() => setShow(true), time);
-    }, []);
+    }, [setShow, time]);
 
     return <span className="background__char" style={{ opacity: +show }}>{char}</span>
 }

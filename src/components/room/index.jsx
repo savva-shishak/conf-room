@@ -50,7 +50,7 @@ store.setState(
         list: [
             {
                 peedID: 1,
-                name: "Татьяна Ульянова",
+                name: "Антон Смоктуновский",
                 audio: Math.random() > 0.5,
                 camera: Math.random() > 0.5,
                 avatarUrl: "https://www.spletnik.ru/img/__post/88/88dab31928525b2b39d1c804b0d661d2_210.jpg"

@@ -8,7 +8,7 @@ export function Carousel({ clients }) {
     });
 
     return <div className="windows-carousel windows__screen">
-        <div><Window clientid={1} /></div>
+        <div><Window clientid={1} iconSize={{ container: 48, icon: 24 }} /></div>
         <div 
             className="windows-carousel__container"
             onWheel={e => {

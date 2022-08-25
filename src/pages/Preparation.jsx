@@ -101,10 +101,17 @@ export function Preparation() {
                     Показ экрана:
                     <input id="out-screen" type="text" {...formik.getFieldProps("outScreen")}/>
                 </label>
-                    <Button style={{
+                <Button
+                    style={{
                         opacity: formik.values.username ? 1 : 0,
                         transform: `scale(${formik.values.username ? 1 : 0})`,
-                    }} primary type="submit">Подключиться</Button>
+                        marginTop: 10
+                    }}
+                    primary
+                    type="submit"
+                >
+                    Подключиться
+                </Button>
             </div>
         </form>
     </div>
